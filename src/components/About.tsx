@@ -241,14 +241,14 @@ const About: React.FC = () => {
           <Column>
             <ProfileSection>
               <ProfileImage 
-                src="/images/profile.jpg" 
+                src="/images/profile.jpg"
                 alt="Profile"
                 onError={(e) => {
                   const img = e.target as HTMLImageElement;
-                  img.src = 'https://placehold.co/220x220/DDB892/6B4226?text=Profile';
+                  img.src = '/images/default-profile.jpg';
                 }}
               />
-              <Role>Frontend Developer</Role>
+              <Role>Full Stack Developer</Role>
             </ProfileSection>
             <EducationList>
               <h3>Education</h3>

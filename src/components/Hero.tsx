@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Image } from 'cloudinary-react';
+import { cloudinaryConfig } from '../config/cloudinary';
 
 const float = keyframes`
   0% {
@@ -66,18 +68,18 @@ const Subtitle = styled.p`
   line-height: 1.6;
 `;
 
-const FloatingLaptop = styled.div`
+const FloatingLaptop = styled(Image)`
   position: absolute;
   right: 5%;
   top: 20%;
   width: 500px;
   height: 300px;
-  background: url('https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=1200&auto=format') center/cover;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  opacity: 0.15;
+  opacity: 0.85;
   animation: ${float} 6s ease-in-out infinite;
   z-index: 1;
+  object-fit: cover;
 
   &::before {
     content: '';
@@ -116,17 +118,17 @@ const BackgroundElements = styled.div`
   z-index: 1;
 `;
 
-const MiniLaptop = styled.div<{ delay: string; size: string; top: string; left: string }>`
+const MiniLaptop = styled(Image)<{ delay: string; size: string; top: string; left: string }>`
   position: absolute;
   width: ${props => props.size};
   height: calc(${props => props.size} * 0.6);
-  background: url('https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=1200&auto=format') center/cover;
   border-radius: 10px;
-  opacity: 0.1;
+  opacity: 0.8;
   animation: ${floatIcons} 8s ease-in-out infinite;
   animation-delay: ${props => props.delay};
   top: ${props => props.top};
   left: ${props => props.left};
+  object-fit: cover;
 
   &::before {
     content: '';
@@ -161,9 +163,30 @@ const Hero: React.FC = () => {
   return (
     <HeroSection>
       <BackgroundElements>
-        <MiniLaptop delay="0s" size="120px" top="15%" left="10%" />
-        <MiniLaptop delay="1s" size="100px" top="65%" left="85%" />
-        <MiniLaptop delay="2s" size="80px" top="40%" left="75%" />
+        <MiniLaptop 
+          cloudName={cloudinaryConfig.cloudName}
+          publicId="portfolio/laptop1"
+          delay="0s" 
+          size="120px" 
+          top="15%" 
+          left="10%" 
+        />
+        <MiniLaptop 
+          cloudName={cloudinaryConfig.cloudName}
+          publicId="portfolio/laptop2"
+          delay="1s" 
+          size="100px" 
+          top="65%" 
+          left="85%" 
+        />
+        <MiniLaptop 
+          cloudName={cloudinaryConfig.cloudName}
+          publicId="portfolio/laptop3"
+          delay="2s" 
+          size="80px" 
+          top="40%" 
+          left="75%" 
+        />
         
         <TechIcon delay="0.5s" top="25%" left="20%">⌨️</TechIcon>
         <TechIcon delay="1.5s" top="70%" left="15%">🖱️</TechIcon>
@@ -179,7 +202,10 @@ const Hero: React.FC = () => {
           </Subtitle>
         </Content>
       </Container>
-      <FloatingLaptop />
+      <FloatingLaptop 
+        cloudName={cloudinaryConfig.cloudName}
+        publicId="portfolio/main"
+      />
     </HeroSection>
   );
 };
