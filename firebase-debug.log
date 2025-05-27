@@ -1,0 +1,24 @@
+[debug] [2025-05-27T18:06:37.939Z] ----------------------------------------------------------------------
+[debug] [2025-05-27T18:06:37.941Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\radha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2025-05-27T18:06:37.941Z] CLI Version:   14.4.0
+[debug] [2025-05-27T18:06:37.941Z] Platform:      win32
+[debug] [2025-05-27T18:06:37.941Z] Node Version:  v24.1.0
+[debug] [2025-05-27T18:06:37.941Z] Time:          Tue May 27 2025 23:36:37 GMT+0530 (India Standard Time)
+[debug] [2025-05-27T18:06:37.941Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-27T18:06:37.943Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2025-05-27T18:06:38.140Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\radha\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:507:28)
+    at Interface.emit (node:domain:489:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1381:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:297:20)
+    at ReadStream.emit (node:events:519:35)
+    at ReadStream.emit (node:domain:489:12)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.
