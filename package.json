@@ -2,7 +2,7 @@
   "name": "showmya-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Error27-corrected.github.io/portfolio/",
+  "homepage": ".",
   "dependencies": {
     "@types/node": "^16.18.0",
     "@types/react": "^18.2.0",
